@@ -1,18 +1,18 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Navigate, Route } from 'react-router-dom';
 
 const checkToken = () =>{
     return true
 } 
 
-function AuthRoute(props){
+function AuthRoute({ componet: Component, ...rest }){
     <Route
         {...rest}
         render={props =>
             ( checkToken() == null) ? (
                 <Component {...props} />
             ) : (
-                <Redirect to={{
+                <Navigate to={{
                     pathname: './',
                     state: { from: props.location },
                 }}
