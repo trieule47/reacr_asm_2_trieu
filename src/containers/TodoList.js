@@ -77,9 +77,7 @@ export default class TodoList extends Component {
         )
     }
 
-
-
-    renderListTask() {
+    renderTaskList() {
         return (
             <div class="box">
                 <h2>List Task</h2>
@@ -102,7 +100,7 @@ export default class TodoList extends Component {
         return (
             <div class="container">
                 {this.renderAddNewTask()}
-                {this.renderListTask()}
+                {this.renderTaskList()}
             </div>
         )
     }
